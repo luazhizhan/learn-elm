@@ -1,0 +1,8 @@
+# elm-package generated files
+elm-stuff
+
+# Dependency directories
+node_modules
+
+# Desktop Services Store on macOS
+.DS_Store
