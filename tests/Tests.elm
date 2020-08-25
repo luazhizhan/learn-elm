@@ -10,6 +10,7 @@ suite =
     test "Learn Elm is Working" learnElmIsWorking
 
 
+learnElmIsWorking : () -> Expect.Expectation
 learnElmIsWorking _ =
     let
         result =
