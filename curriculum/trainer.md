@@ -135,12 +135,10 @@ type ApiResponse =
   | Fail String
 
 ## JSON
-https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=cat
-++ Do Json exercise
-Ask student to change the "Load Image" button to load the cat image
-and also to show more meta data of the data
-++ choose the data
-Install `NoRedInk/elm-json-decode-pipeline` and use it to decode
+- Ask student to install `elm-app install elm/json`
+Do Json exercise
+- Ask student to change the "Load Image" button to load the cat image and also to show more fields of the returned data
+- Install `NoRedInk/elm-json-decode-pipeline` and use it to decode
 
 ## Random
 Discuss why Random is considered a side-effect?
