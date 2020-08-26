@@ -136,9 +136,10 @@ type ApiResponse =
 
 ## JSON
 - Ask student to install `elm-app install elm/json`
-Do Json exercise
+- Do Json exercise
 - Ask student to change the "Load Image" button to load the cat image and also to show more fields of the returned data
 - Install `NoRedInk/elm-json-decode-pipeline` and use it to decode
+- Using the Json exercise, encode the data back into a Json string
 
 ## Random
 Discuss why Random is considered a side-effect?
