@@ -31,6 +31,7 @@ and explain
 
 Introduce elm core reference:
 `https://package.elm-lang.org/packages/elm/core/latest/String`
+`https://elm-lang.org/docs/syntax`
 Explain a -> b -> c and the concept of currying
 Explain String vs Char
 
@@ -77,7 +78,7 @@ Use type alias Email = String in User exercise
 ## Pattern Matching
 Go through these 2 sections together
 Do Api exercise
-+++ URL String matching exercise
+Do Route exercise
 
 # Error Handling
 ## Maybe
@@ -157,9 +158,10 @@ Go through it quickly
 ## Navigation
 Ask student to update the app to have the following pages:
 - /
+- /index
 - /about
 - /register
-Note to student to refer to their URL parsing exercise
+Inform student to refer to their Route exercise
 
 ## URL Parsing
 We don't use this package
@@ -183,13 +185,3 @@ https://exercism.io/tracks/elm
 - https://elm-lang.org/docs/syntax
 - Opaque Types: `https://medium.com/@ghivert/designing-api-in-elm-opaque-types-ce9d5f113033`
 - Phantom Types: `https://thoughtbot.com/blog/modeling-currency-in-elm-using-phantom-types`
-
-Advanced:
-|>
-<|
->>
-<<
-Map.map
-Task.map
-Result.mapError
-elm-css
