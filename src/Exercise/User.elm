@@ -9,13 +9,7 @@ type alias User =
     { name : String
     , email : String
     , age : Int
-    , gender : Maybe Gender
     }
-
-
-type Gender
-    = Male
-    | Female
 
 
 {-| Write a function named create to create a user
