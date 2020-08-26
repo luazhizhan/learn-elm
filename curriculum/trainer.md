@@ -31,10 +31,12 @@ and explain
 
 Introduce elm core reference:
 `https://package.elm-lang.org/packages/elm/core/latest/String`
-Play with an example `String.length`
 Explain a -> b -> c and the concept of currying
-Encourage students to explore more string functions
 Explain String vs Char
+
+Play with an example `String.length`
+Do the FormatCents.elm exercise
+Do the Strings.elm exercise
 
 ### Functions
 ### If-else
@@ -43,33 +45,16 @@ Do the Factorial.elm exercise
 ## Lists
 Can only hold the same type for the entire list
 List vs Array
-Demo List.map a decrement function 
-[1,2,3,4,5]
-|> List.map increment
-|> List.map decrement
-|> List.filter (\n -> modBy 2 n == 0)
-
-Do the FormatCents.elm exercise
-Do the Strings.elm exercise
+Do the demo and kata in Lists.elm exercise
 
 ## Tuple
 Maximum 3 values
 
 ## Records:
-Exercise
-Write a function createPerson: String -> Int -> { name: String, age: Int }
-
-Create a list of person:
-people = [
-	createPerson "Steven" 39,
-	createPerson "Alex" 28,
-	createPerson "Mary" 34,
-	createPerson "Cindy" 22
-]
-
-Write a function to return sum of all ages given a list of person: List Person -> Int
-
-#*** SKIP THE ELM ARCHITECTURE AND GO TO TYPES FIRST ***
+- Known as objects in Javascript
+- Immutable
+- Field type cannot be changed
+Do User exercise until `findByName`
 
 # Types
 ## Reading Types
@@ -86,17 +71,28 @@ Explain List.range : Int -> Int -> List Int
 - Skip constrained type variables
 
 ## Type Aliases:
-Do User exercise until `findByName`
-- Explain type alias Email = String
+Use type alias Email = String in User exercise
 
 ## Custom Types
 ## Pattern Matching
 Go through these 2 sections together
 Do Api exercise
++++ URL String matching exercise
 
 # Error Handling
 ## Maybe
 Do from  `findByName` to `getFemaleUsers` in User exercise
+```elm
+-- Discuss Maybe Type vs Custom Type
+type VerifiedStatus =
+    Pending
+    | Approved
+    | Rejected
+
+type alias User = {
+    verifiedStatus: Maybe VerifiedStatus
+}
+```
 
 ## Result
 Do only `validate` in User exercise
@@ -108,10 +104,73 @@ where
 `type ErrorCode = InvalidEmail | InvalidName | InvalidAge`
 
 - Making impossible state impossible: `https://www.youtube.com/watch?v=IcgmSRJHu_8`
-Revisit the FormatCents.elm exercise
-How do you guarantee Int is always positive?
 
-Final Exercise:
+# The Elm Architecture
+## Buttons
+Create a file `/src/Main.elm` and copy the example code
+Run `npm start`
+Student can view localhost:3000 to play with the app
+
+Do the exercise: Add a button to reset the counter to zero:
+
+## Text Fields
+Ask student to add the code in current app
+so they can understand better
+
+## Forms
+Ask student to add the code in current app
+so they can understand better
+
+# Commands and Subscriptions
+## HTTP
+Tell student to implement a button "Load Image"
+and then it will call the HTTP to load an image.
+
+Work with the student to create the ApiResponse type first
+type ApiResponse =
+  Ready
+  | Loading
+  | Success String
+  | Fail String
+
+## JSON
+https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=cat
+++ Do Json exercise
+Ask student to change the "Load Image" button to load the cat image
+and also to show more meta data of the data
+++ choose the data
+Install `NoRedInk/elm-json-decode-pipeline` and use it to decode
+
+## Random
+Discuss why Random is considered a side-effect?
+Ask student to create a button that roll 1 to 6
+
+## Time
+Discuss why Time is considered a side-effect?
+Ask student to display current date and time
+Install `ryannhg/date-format` to format the date
+
+# JavaScript Interop
+Go through it quickly
+
+# Web Apps
+## Navigation
+Ask student to update the app to have the following pages:
+- /
+- /about
+- /register
+Note to student to refer to their URL parsing exercise
+
+## URL Parsing
+We don't use this package
+but students are free to learn it themselves
+
+## Modules
+## Structure
+To discuss with students
+Using User exercise, share with student the idea of Data Type files
+
+# Final Exercise:
 - Register a user with an API
 - Name, Email, Password, Gender (optional)
 - Display emall is taken error
