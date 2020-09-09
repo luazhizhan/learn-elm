@@ -4,7 +4,7 @@ module Exercise.Lists exposing (remove)
 -}
 
 
-{-| Trainer demo
+{-| Trainer's demo
 Write an increment function
 Write an decrement function
 Write an isEven function
@@ -21,16 +21,11 @@ listValues =
     , 2
     , 3
     , 4
-    , 5
-    , 6
-    , 7
-    , 8
-    , 9
-    , 10
     ]
 
 
-{-| Write a function to remove the first occurrence of a value from a list.
+{-| Trainer's demo
+Write a function to remove the first occurrence of a value from a list.
 -}
 remove : a -> List a -> List a
 remove element list =

@@ -5,7 +5,8 @@ Examples:
 formatCents 1250 == "$12.50"
 formatCents 100 == "$1.00"
 formatCents 9999 == "$99.99"
-formatCents -1 == "$0.00"
+
+Assume that int will always be >= 0
 
 Hint:
 Check out String.dropRight and String.padLeft in

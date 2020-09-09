@@ -71,24 +71,29 @@ getFemaleUsers users =
     users
 
 
-{-| User Validations
+                _ ->
+                    getFemaleUsers rest
 
-Write a function to validate user name is more than 10 characters
-validateName : User -> Result String User
 
-Write a function to validate user email contains '@'
-validateEmail : User -> Result String User
 
-Write a function to validate user age is >= 18
-validateAge : User -> Result String User
+{- User Validations
 
-Write a function to validate a user
-validate : User -> Result String User
+   Write a function to validate user name is more than or equal to 3 characters
+   validateName : User -> Result String User
 
-Update create function to return a Result String User
+   Write a function to validate user email contains '@'
+   validateEmail : User -> Result String User
 
-Finally,
-is String a good type for Result.Err?
-How can we design the type for Result.Err?
+   Write a function to validate user age is >= 18
+   validateAge : User -> Result String User
+
+   Write a function to validate a user
+   validate : User -> Result String User
+
+   Update create function to return a Result String User
+
+   Finally,
+   is String a good type for Result.Err?
+   How can we design the type for Result.Err?
 
 -}

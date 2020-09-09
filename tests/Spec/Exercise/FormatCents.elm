@@ -19,6 +19,4 @@ suite =
                 \_ -> Expect.equal "$0.01" (formatCents 1)
             , test "Formats 0" <|
                 \_ -> Expect.equal "$0.00" (formatCents 0)
-            , test "Formats -1" <|
-                \_ -> Expect.equal "$0.00" (formatCents -1)
             ]

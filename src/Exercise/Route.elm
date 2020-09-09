@@ -6,8 +6,7 @@ type Route
     | AboutUs
     | Topic String
     | User String
-    | Blog Int
-    | Comment String Int
+    | Comment String String
     | Unknown
 
 
@@ -16,17 +15,20 @@ type Route
 "/index" == Home
 "/about-us" == AboutUs
 "/topic/general" == Topic "general"
-"/blog/123" == Blog 123
+"/topic/fun" == Topic "fun"
 "/user/cindy-wee" == User "cindy-wee"
-"/user/cindy-wee/comment/2" == Comment "cindy-wee" 2
+"/user/cindy-wee/comment/rxzudk231" == Comment "cindy-wee" "rxzudk231"
 "/404" == Unknown
 -}
 toRoute : String -> Route
 toRoute url =
     -- Complete the implementation here
     case String.split "/" url of
-        "" :: "topic" :: topicTitle :: _ ->
-            Topic topicTitle
+        "" :: "topic" :: t :: _ ->
+            Topic t
+
+        [ "", "User", username ] ->
+            User username
 
         _ ->
             Unknown

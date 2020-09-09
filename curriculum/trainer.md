@@ -3,6 +3,8 @@ Read `https://guide.elm-lang.org/`
 with the below additional notes for each section
 
 The focus is on mastering syntax first before learning The Elm Architecture.
+Trainer is advised to constantly harp on reading the types of all functions
+so students have a firm grasp on typing and reading types.
 
 For all excerises, inform the student to create a new file in `/src/Excerise/NewFile.elm` and a corresponding test case in `/tests/Spec/Excerise/NewFile.elm`
 
@@ -36,8 +38,8 @@ Explain a -> b -> c and the concept of currying
 Explain String vs Char
 
 Play with an example `String.length`
-Do the FormatCents.elm exercise
 Do the Strings.elm exercise
+Do the FormatCents.elm exercise
 
 ### Functions
 ### If-else
@@ -56,6 +58,7 @@ Maximum 3 values
 - Immutable
 - Field type cannot be changed
 Do User exercise until `findByName`
+Inform student to write their own test cases and function signatures
 
 # Types
 ## Reading Types
@@ -77,21 +80,28 @@ Use type alias Email = String in User exercise
 ## Custom Types
 ## Pattern Matching
 Go through these 2 sections together
-Do Api exercise
+Do Api exercise 
+- Teach for student to expose Response(..)
+- Tag String to Loaded and Error and return the string
 Do Route exercise
+
+Focus on the difference between Custom Type, Type variant, Type variable, Type alias (also Record type)
 
 # Error Handling
 ## Maybe
-Do from  `findByName` to `getFemaleUsers` in User exercise
+Do from  `findByName`  in User Exercise
+Do `getFemaleUsers` in User exercise
+- Trainer to add Maybe Gender and show the compiler errors and fix it
+
 ```elm
 -- Discuss Maybe Type vs Custom Type
-type VerifiedStatus =
-    Pending
-    | Approved
-    | Rejected
+type Gender =
+    Male
+    | Female
+    | Unknown
 
 type alias User = {
-    verifiedStatus: Maybe VerifiedStatus
+    gender: Gender
 }
 ```
 
@@ -112,27 +122,62 @@ Create a file `/src/Main.elm` and copy the example code
 Run `npm start`
 Student can view localhost:3000 to play with the app
 
-Do the exercise: Add a button to reset the counter to zero:
+Go through `https://package.elm-lang.org/packages/elm/html/latest/Html`
+Do the exercise: Add a button to reset the counter to zero.
+
+Go through the Elm Debugger.
+
+Install `rtfeldman/elm-css`
+and do some simple styling!
+Reference: `https://package.elm-lang.org/packages/rtfeldman/elm-css/latest`
 
 ## Text Fields
+This part can be skipped if the students are strong
 Ask student to add the code in current app
 so they can understand better
 
 ## Forms
+Student may be confused about `onInput Name`
+explain that `onInput Name` is equivalent to `onInput (\string -> Name string)`
+and also similar to React `<input onChange={string => console.log(string)}`
+
 Ask student to add the code in current app
 so they can understand better
 
+Ask student to add `validateName` from User exercise
+and display an error message
+
 # Commands and Subscriptions
 ## HTTP
-Tell student to implement a button "Load Image"
-and then it will call the HTTP to load an image.
+Ask student to install `./node_modules/.bin/elm-app install elm/http`
 
-Work with the student to create the ApiResponse type first
+Tell student to implement a button "Load Text"
+and then it will call the HTTP to load the text.
+`https://elm-lang.org/assets/public-opinion.txt`
+
+Work with the student to create the ApiResponse type:
 type ApiResponse =
   Ready
   | Loading
   | Success String
   | Fail String
+
+Skip JSON section and focus on Random and Time first
+to allow student to have a firm grasp on `Cmd msg` and `Sub msg`
+
+## Random
+Ask student to install `./node_modules/.bin/elm-app install elm/random`
+Discuss why Random is considered a side-effect?
+Ask student to create a button that roll 1 to 6
+
+## Time
+Discuss why Time is considered a side-effect?
+Discuss storing time as Posix vs String (`https://en.wikipedia.org/wiki/ISO_8601`)
+Ask student to install `./node_modules/.bin/elm-app install elm/time`
+Ask student to display time in millis int
+
+Explain Task type in `Time.here`
+Optional: Install `ryannhg/date-format` to format the date
 
 ## JSON
 - Ask student to install `elm-app install elm/json`
@@ -141,17 +186,11 @@ type ApiResponse =
 - Install `NoRedInk/elm-json-decode-pipeline` and use it to decode
 - Using the Json exercise, encode the data back into a Json string
 
-## Random
-Discuss why Random is considered a side-effect?
-Ask student to create a button that roll 1 to 6
-
-## Time
-Discuss why Time is considered a side-effect?
-Ask student to display current date and time
-Install `ryannhg/date-format` to format the date
-
 # JavaScript Interop
 Go through it quickly
+
+Watch Life of a File: 
+`https://www.youtube.com/watch?v=XpDsk374LDE&feature=youtu.be`
 
 # Web Apps
 ## Navigation

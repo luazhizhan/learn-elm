@@ -1,7 +1,6 @@
 module Exercise.Api exposing (Response, displayResponse)
 
-{-| This is a multi-part exercise centering around the User type
-Please follow the trainer's instruction.
+{-| Api Exercises
 -}
 
 
