@@ -12,11 +12,10 @@ For all excerises, inform the student to create a new file in `/src/Excerise/New
 - Open mind to learn a new language
 - Explain the little program line by line
 - Explain function update msg model
-- Every function only returns one value
 - Immutability
-- What is a Type? A type is a kind of contract between a variable and a compiler. It tells the compiler what is the kind of a variable and it allows the compiler to enforce rules upon the variable's kind eg. cannot call .length on an Int variable
 - No classes in Elm
 - All functions are 100% PURE
+- What is a Type? A type is a kind of contract between a variable and a compiler. It tells the compiler what is the kind of a variable and it allows the compiler to enforce rules upon the variable's kind eg. cannot call .length on an Int variable
 
 ## Core Language
 
@@ -28,7 +27,7 @@ Walkthrough `/tests/Tests.elm`
 and explain 
 - module/import/export
 - let..in 
-- back piping
+- front/back piping
 - `_ = Debug.log "title" value`
 
 Introduce elm core reference:
@@ -39,10 +38,10 @@ Explain String vs Char
 
 Play with an example `String.length`
 Do the Strings.elm exercise
-Do the FormatCents.elm exercise
 
 ### Functions
 ### If-else
+Do the FormatCents.elm exercise 
 Do the Factorial.elm exercise
 
 ## Lists
@@ -57,7 +56,8 @@ Maximum 3 values
 - Known as objects in Javascript
 - Immutable
 - Field type cannot be changed
-Do User exercise until `findByName`
+Do User exercise `create` & `updateEmail`
+Inform student in `create` that a record type is actually a function
 Inform student to write their own test cases and function signatures
 
 # Types
@@ -74,6 +74,7 @@ Explain List.map : (a -> b) -> List a -> List b
 Explain List.range : Int -> Int -> List Int
 - Skip constrained type variables
 
+
 ## Type Aliases:
 Use type alias Email = String in User exercise
 
@@ -81,17 +82,17 @@ Use type alias Email = String in User exercise
 ## Pattern Matching
 Go through these 2 sections together
 Do Api exercise 
-- Teach for student to expose Response(..)
+- Teach student to expose Response(..)
 - Tag String to Loaded and Error and return the string
 Do Route exercise
 
-Focus on the difference between Custom Type, Type variant, Type variable, Type alias (also Record type)
+Focus on the difference between Custom Type, Type variant, Type associated variant, Type variable, Type alias (also Record type)
 
 # Error Handling
 ## Maybe
-Do from  `findByName`  in User Exercise
-Do `getFemaleUsers` in User exercise
+Do `findByName` & `findByEmail` in User Exercise
 - Trainer to add Maybe Gender and show the compiler errors and fix it
+Do `getFemaleUsers` in User Exercise
 
 ```elm
 -- Discuss Maybe Type vs Custom Type
@@ -107,9 +108,10 @@ type alias User = {
 
 ## Result
 Do only `validate` in User exercise
-Guide students to think about function composition
-Guide students to think about handling String as error
+Guide students to think about function composition (in `create` function)
+
 Hidden exercise:
+Guide students to think about handling String as error
 Write a function named errorMessage : ErrorCode -> String
 where 
 `type ErrorCode = InvalidEmail | InvalidName | InvalidAge`
@@ -156,11 +158,13 @@ and then it will call the HTTP to load the text.
 `https://elm-lang.org/assets/public-opinion.txt`
 
 Work with the student to create the ApiResponse type:
+```elm
 type ApiResponse =
   Ready
   | Loading
   | Success String
   | Fail String
+```
 
 Skip JSON section and focus on Random and Time first
 to allow student to have a firm grasp on `Cmd msg` and `Sub msg`
@@ -198,7 +202,8 @@ Ask student to update the app to have the following pages:
 - /
 - /index
 - /about
-- /register
+- /login
+- /dashboard
 Inform student to refer to their Route exercise
 
 ## URL Parsing
@@ -211,7 +216,7 @@ To discuss with students
 Using User exercise, share with student the idea of Data Type files
 
 # Final Exercise:
-- Register a user with an API
+- Login a user with an API
 - Name, Email, Password, Gender (optional)
 - Display emall is taken error
 - Display user is registered successfully

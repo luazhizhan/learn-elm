@@ -16,15 +16,15 @@ decodeID =
 -- Write a decoder for data.image_url
 -- Write a decoder for data.viewed
 {-
-     Write a decoder for
-     type alias Image =
-       {
-         id: String,
-         imageUrl: String,
-         viewed: Int,
-       }
+   Write a decoder for
+   type alias Image =
+     {
+       id: String,
+       imageUrl: String,
+       viewed: Int,
+     }
 
-     Hint: Use JD.map3 into Image type.
-     Remember that Image record type is actually a function of this signature:
+   Hint: Use JD.map3 into Image type.
+   Remember that Image record type is actually a function of this signature:
    String -> String -> Int -> Image
 -}

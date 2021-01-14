@@ -71,10 +71,6 @@ getFemaleUsers users =
     users
 
 
-                _ ->
-                    getFemaleUsers rest
-
-
 
 {- User Validations
 
