@@ -6,12 +6,9 @@ Please follow the trainer's instruction.
 
 
 type Response
-    = What
-    | Are
-    | The
-    | Different
-    | Type
-    | Variants
+    = Loading
+    | Successful
+    | Unsuccessful
 
 
 {-|
@@ -23,5 +20,13 @@ type Response
 
 -}
 displayResponse : Response -> String
-displayResponse _ =
-    "Your implementation here"
+displayResponse res =
+    case res of
+        Loading ->
+            "Loading"
+
+        Successful ->
+            "Successful"
+
+        Unsuccessful ->
+            "Unsuccessful"

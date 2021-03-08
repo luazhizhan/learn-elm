@@ -7,10 +7,9 @@ import Test exposing (Test, describe, test)
 
 suite : Test
 suite =
-    Test.skip <|
-        describe "format"
-            [ test "Formats \"elm/ is/fun /to/write!\"" <|
-                \_ -> Expect.equal "ELM IS FUN TO WRITE!" (format "elm/ is/fun /to/write!")
-            , test "Formats \"hello/world\"" <|
-                \_ -> Expect.equal "HELLO WORLD" (format "hello/world")
-            ]
+    describe "format"
+        [ test "Formats \"elm/ is/fun /to/write!\"" <|
+            \_ -> Expect.equal "ELM IS FUN TO WRITE!" (format "elm/ is/fun /to/write!")
+        , test "Formats \"hello/world\"" <|
+            \_ -> Expect.equal "HELLO WORLD" (format "hello/world")
+        ]

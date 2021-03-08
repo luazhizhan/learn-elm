@@ -15,4 +15,7 @@ String.join
 format : String -> String
 format string =
     -- Your implementation here
-    string
+    String.split "/" string
+        |> List.map String.trim
+        |> String.join " "
+        |> String.toUpper

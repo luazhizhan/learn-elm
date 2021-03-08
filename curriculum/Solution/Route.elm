@@ -6,7 +6,8 @@ type Route
     | AboutUs
     | Topic String
     | User String
-    | Comment String String
+    | Blog Int
+    | Comment String Int
     | Unknown
 
 
@@ -15,9 +16,9 @@ type Route
 "/index" == Home
 "/about-us" == AboutUs
 "/topic/general" == Topic "general"
-"/topic/fun" == Topic "fun"
+"/blog/123" == Blog 123
 "/user/cindy-wee" == User "cindy-wee"
-"/user/cindy-wee/comment/rxzudk231" == Comment "cindy-wee" "rxzudk231"
+"/user/cindy-wee/comment/2" == Comment "cindy-wee" 2
 "/404" == Unknown
 -}
 toRoute : String -> Route
@@ -36,11 +37,24 @@ toRoute url =
         "" :: "topic" :: topicTitle :: _ ->
             Topic topicTitle
 
+        "" :: "blog" :: blogNumber :: _ ->
+            case String.toInt blogNumber of
+                Nothing ->
+                    Unknown
+
+                Just id ->
+                    Blog id
+
         "" :: "user" :: userName :: [] ->
             User userName
 
         "" :: "user" :: userName :: "comment" :: commentID :: _ ->
-            Comment userName commentID
+            case String.toInt commentID of
+                Nothing ->
+                    Unknown
+
+                Just id ->
+                    Comment userName id
 
         _ ->
             Unknown
